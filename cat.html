@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="public.css">
+    <style>
+        .catbox{
+            width:700px;
+            height:700px;
+            margin:0 auto;
+            border:1px solid red;
+            position: relative;
+        }
+        .catbox .headbox{
+            width:310px;
+            height: 300px;
+            border:2px solid #000;
+            margin:0 auto;
+            border-radius: 50%;
+            background:linear-gradient(45deg,#0a6077 5%,#0cb1db 30%,#08bce8 40%,#81def4 80%) ;
+            position: relative;
+         }
+        .catbox .headbox .face{
+            width:264px;
+            height:196px;
+            border:2px solid #000;
+            border-radius: 50%;
+            background: linear-gradient(45deg,#c9c9c9 10%,#ffffff 25%);
+            position: absolute;
+            top:85px;
+            left:22px;
+        }
+        .eyebox{
+            position: absolute;
+            top:-30px;
+            left:56px;
+        }
+        .eyebox li{
+            width:72px;
+            height:83px;
+            border:2px solid #000;
+            border-radius: 35px 35px;
+            float:left;
+            background: #fff;
+            position: relative;
+        }
+        .eyebox li p{
+            width:15px;
+            height:15px;
+            background: #333;
+            border-radius: 50%;
+            position: absolute;
+            bottom:15px;
+         }
+        .eyebox li .left_eye{
+            right:10px;
+        }
+        .eyebox li .right_eye{
+            left:10px;
+        }
+        .nose{
+            width:36px;
+            height:36px;
+            border-radius: 50%;
+            border:2px solid #000;
+            background: radial-gradient(at 25px,#ffffff 10%,#c93e00 30%);
+            position: absolute;
+            left:112px;
+            top:42px;
+            z-index: 2;
+        }
+        .xian{
+            width:3px;
+            height:85px;
+            background: #333;
+            transform: translate(130px,60px);
+        }
+        .face .moush{
+            width:130px;
+            height:90px;
+            border-bottom: 3px solid #000;
+            border-radius: 60%;
+            position: absolute;
+            bottom:50px;
+            left:70px;
+            z-index: 40;
+        }
+        .left_beardbox{
+            width:87px;
+            height:97px;
+             position: relative;
+         }
+        .right_beardbox{
+            position: absolute;
+            right:10px;
+            top:82px;
+            z-index: 50;
+        }
+        .face .right_beardbox .right_twobear{
+            transform: rotate(22deg);
+        }
+        .face .right_beardbox .right_therebear{
+            transform: rotate(-22deg);
+        }
+        .left_beardbox .one_bear{
+            width:60px;
+            height:2px;
+            background: #000;
+            position: absolute;
+            top:10px;
+            left:20px;
+        }
+        .left_beardbox .two_bear{
+            width:60px;
+            height:2px;
+            background: #000;
+            position: absolute;
+            top:27px;
+            left:20px;
+            transform: rotate(-22deg);
+        }
+        .left_beardbox .there_bear{
+            width:60px;
+            height:2px;
+            background: #000;
+            position: absolute;
+            top:-10px;
+            left:20px;
+            transform: rotate(22deg);
+        }
+        .weibo{
+            width:220px;
+            height:20px;
+            background:linear-gradient(45deg,#7b1900 10%,#b93300 20%);
+            border:2px solid #000;
+            position: absolute;
+            top:-3px;
+            left:-35px;
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        /*身体*/
+        .shenti{
+            width:220px;
+            height:165px;
+            background:linear-gradient(45deg,#008db5 10%,#0077b6 30%,#06afdf);
+            border:2px solid #000;
+            position: absolute;
+            left:237px;
+            top:277px;
+            border-radius: 17px 17px 0 0;
+        }
+        .kouzi{
+            width:40px;
+            height:40px;
+            border:2px solid #000;
+            background: radial-gradient(at 40px,#fbf9bc 10%,#e0d817 30%);
+            border-radius: 50%;
+            position: absolute;
+            top:5px;
+            left:53px;
+            z-index:10;
+        }
+        .kouzi .kuang{
+            width:38px;
+            height:3px;
+            border:1px solid #000;
+            position: absolute;
+            top:10px;
+            left:-1px;
+        }
+        .kouzi .heidian{
+            width:12px;
+            height:10px;
+            background: #000;
+            border-radius: 13px;
+            transform: translate(14px,17px);
+        }
+        .kouzi .shutiao{
+            width:3px;
+            height:15px;
+            background: #000;
+            position: absolute;
+            bottom:0;
+            left:18px;
+        }
+        .shenti .center{
+            width:150px;
+            height:150px;
+            border:2px solid #000;
+            background:linear-gradient(45deg,#d5d5d5 20%,#ffffff 40%);
+            border-radius: 50%;
+            transform: translate(32px,-20px);
+            position: relative;
+        }
+        .center .cicle{
+            width:105px;
+            height:105px;
+            border:2px solid #000;
+            background:linear-gradient(45deg,#d5d5d5 5%,#ffffff 30%) ;
+            border-radius: 50%;
+            transform: translate(22px,24px);
+        }
+       .center .gai{
+            width: 109px;
+            height:50px;
+            background: #fff;
+            border-bottom:2px solid #000;
+            z-index: 5;
+            position: absolute;
+            top:25px;
+            left:22px;
+        }
+       .left_gebo{
+           width:64px;
+           height:90px;
+           background:linear-gradient(to right,#0083a6 10%,#0083a6 20%);
+           transform: skew(-50deg);
+           position:absolute ;
+           top:267px;
+           left:210px;
+           z-index:-1 ;
+           border:2px solid #000;
+       }
+       .right_gebo{
+            width:64px;
+            height:90px;
+            background:linear-gradient(to right,#2e89a0 10%,#07beea 20%);
+            transform: skew(48deg);
+            position:absolute ;
+            top:267px;
+            right:210px;
+            z-index: -1;
+            border:2px solid #000;
+        }
+         .right_hand{
+            width:62px;
+            height:62px;
+            border:2px solid #000;
+            border-radius: 50%;
+            background: linear-gradient(45deg,#d2d2d2,#fefefe,#ffffff);
+             transform: translate(475px,24px);
+        }
+        .left_hand{
+            width:62px;
+            height:62px;
+            border:2px solid #000;
+            border-radius: 50%;
+            background: linear-gradient(45deg,#d2d2d2 30%,#fefefe 50%);
+            transform: translate(154px,-42px);
+        }
+        .foot{
+            width:280px;
+            height:40px;
+           transform: translate(205px,0);
+            position: relative;
+            z-index: -1;
+         }
+        .foot .left_foot{
+            width:125px;
+            height:30px;
+            border:2px solid #000;
+            border-radius: 80px 40px 60px 60px;
+            position: absolute;
+            left:0;
+            top:0;
+            background: linear-gradient(45deg,#b9b9b9 10%,#ececec 30%,#ffffff 40%);
+        }
+        .foot .right_foot{
+            width:125px;
+            height:30px;
+            border:2px solid #000;
+            border-radius: 60px 60px 80px 40px;
+            position: absolute;
+            right:0;
+            top:0;
+            background: linear-gradient(45deg,#b9b9b9 8%,#ececec 20%,#ffffff 40%);
+        }
+    </style>
+</head>
+<body>
+    <div class="catbox">
+        <div class="headbox">
+            <div class="face">
+                <ul class="eyebox">
+                    <li>
+                        <p class="left_eye"></p>
+                    </li>
+                    <li>
+                        <p class="right_eye"></p>
+                    </li>
+                </ul>
+                <div class="nose"></div>
+                <div class="xian"></div>
+                <div class="left_beardbox">
+                    <div class="one_bear"></div>
+                    <div class="two_bear"></div>
+                    <div class="there_bear"></div>
+                </div>
+                <div class="left_beardbox right_beardbox">
+                    <div class="one_bear right_onebear"></div>
+                    <div class="two_bear right_twobear"></div>
+                    <div class="there_bear right_therebear"></div>
+                </div>
+                <div class="moush"></div>
+            </div>
+
+         </div>
+        <div class="shenti">
+           <div class="center">
+                <div class="weibo"></div>
+                <div class="cicle"></div>
+                <div class="gai"></div>
+                <div class="kouzi">
+                    <div class="kuang"></div>
+                    <div class="heidian"></div>
+                    <div class="shutiao"></div>
+                </div>
+           </div>
+        </div>
+        <div class="left_gebo"> </div>
+        <div class="right_gebo"> </div>
+        <div class="right_hand"></div>
+        <div class="left_hand"></div>
+        <div class="foot">
+             <div class="left_foot"></div>
+             <div class="right_foot"></div>
+        </div>
+   </div>
+</body>
+</html>
